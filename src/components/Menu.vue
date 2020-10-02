@@ -1,6 +1,10 @@
 <template>
   <div id="menu">
-    <a href>menu</a>
+    <!--<p @click="showMenu">menu</p>
+		<transition name="expand">
+			<span class="dot"></span>
+    </transition>-->
+    <p>Coming soon!</p>
   </div>
 </template>
 
@@ -11,14 +15,18 @@ export default {
 </script>
 
 <style>
+.expand-enter {
+  transition: scale(0, 0);
+}
+
+.expand-enter-active {
+  transition: scale(5, 5) linear;
+}
 </style>
 
 <style scoped>
-a {
-  background: #f34213;
+p {
   text-align: center;
-  width: 7rem;
-  height: 7rem;
   border-radius: 100%;
   display: inline-flex;
   flex-direction: column;
@@ -26,6 +34,10 @@ a {
   color: white;
   text-decoration: none;
   font-size: 1.5rem;
+  z-index: 2;
+  position: relative;
+  right: -35px;
+  top: -30px;
 }
 
 div {
@@ -34,5 +46,16 @@ div {
   text-align: center;
   margin: auto;
   width: 100%;
+}
+.dot {
+  height: 7rem;
+  width: 7rem;
+  background-color: #f34213;
+  border-radius: 50%;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  left: -20px;
+  cursor: pointer;
 }
 </style>
